@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carlos - Tarjeta de Recompensas Premium</title>
-    <meta name="description" content="Experimenta el futuro de las recompensas con la tarjeta premium Carlos. Beneficios exclusivos, experiencia de app perfecta y cashback ilimitado." />
+    <title>Carlos 💖 Nayeli — Tarjeta de Recompensas</title>
+    <meta name="description" content="Una tarjeta de recompensas romántica especial para Nayeli Bebe. Porque cada momento juntos merece una recompensa." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
@@ -16,7 +16,10 @@
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
 
-    <!-- Greeting Banner for Nayeli -->
+    <!-- Floating Hearts -->
+    <div class="floating-hearts" aria-hidden="true" id="floatingHearts"></div>
+
+    <!-- Greeting Banner -->
     <div class="greeting-banner" id="greetingBanner">
       <div class="greeting-content">
         <span class="greeting-sparkle">💖</span>
@@ -27,21 +30,38 @@
     </div>
 
     <nav class="navbar">
-      <div class="logo">Carlos</div>
+      <div class="logo">Carlos <span class="heart-logo">♥</span> Nayeli</div>
       <ul class="nav-links">
-        <li><a href="#features">Características</a></li>
-        <li><a href="#benefits">Beneficios</a></li>
-        <li><a href="#apply" class="btn-primary-sm">Solicitar Ahora</a></li>
+        <li><a href="#rewards">Recompensas</a></li>
+        <li><a href="#promises">Promesas</a></li>
+        <li><a href="#" class="btn-primary-sm" id="redeemBtn">Canjear 💝</a></li>
       </ul>
     </nav>
 
     <main class="hero">
       <div class="hero-content">
-        <h1 class="hero-title">Redefiniendo el arte de las <span>recompensas.</span></h1>
-        <p class="hero-subtitle">Obtén 5% de cashback en todos tus viajes de lujo y restaurantes. Integrada perfectamente con nuestra app de última generación.</p>
+        <p class="hero-tag">Tu tarjeta de amor exclusiva</p>
+        <h1 class="hero-title">Cada momento juntos merece una <span>recompensa.</span></h1>
+        <p class="hero-subtitle">Esta tarjeta es tu pase VIP a citas sorpresa, abrazos infinitos, y todos los momentos especiales que compartimos. Acumula puntos con cada beso. 💋</p>
         <div class="hero-actions">
-          <button class="btn-primary" id="applyBtn">Comenzar</button>
-          <button class="btn-secondary">Saber Más</button>
+          <button class="btn-primary" id="applyBtn">Ver Recompensas 🎁</button>
+          <button class="btn-secondary">Nuestra Historia 💫</button>
+        </div>
+        <div class="love-stats">
+          <div class="stat">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Besos disponibles</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Abrazos gratis</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Amor garantizado</span>
+          </div>
         </div>
       </div>
       <div class="hero-visual">
@@ -62,33 +82,83 @@
             </div>
           </div>
         </div>
+        <p class="card-hint">✨ Toca la tarjeta para voltearla</p>
       </div>
     </main>
 
-    <section id="features" class="features">
-      <h2 class="section-title">¿Por qué elegir Carlos?</h2>
+    <section id="rewards" class="features">
+      <h2 class="section-title">Recompensas que puedes <span class="highlight">canjear</span></h2>
+      <p class="section-subtitle">Acumula puntos de amor y canjéalos por experiencias inolvidables 💕</p>
       <div class="feature-grid">
         <div class="feature-card">
-          <div class="icon">✨</div>
-          <h3>Cashback Ilimitado</h3>
-          <p>Acumula puntos que nunca expiran. Puntos dobles en compras internacionales.</p>
+          <div class="icon">🌹</div>
+          <div class="reward-points">50 pts</div>
+          <h3>Cena Romántica</h3>
+          <p>Una cena especial en tu restaurante favorito, con velas y todo lo que te mereces.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🎬</div>
+          <div class="reward-points">30 pts</div>
+          <h3>Noche de Pelis</h3>
+          <p>Maratón de películas con palomitas, cobijas y abrazos ilimitados toda la noche.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">💆‍♀️</div>
+          <div class="reward-points">75 pts</div>
+          <h3>Día de Spa</h3>
+          <p>Un día completo de relajación y consentimiento. Te lo mereces, bebe.</p>
         </div>
         <div class="feature-card">
           <div class="icon">✈️</div>
-          <h3>Acceso a Salas VIP</h3>
-          <p>Acceso gratuito a más de 1,200 salas de aeropuerto en todo el mundo.</p>
+          <div class="reward-points">100 pts</div>
+          <h3>Escapada Romántica</h3>
+          <p>Un fin de semana juntos en un lugar especial. Solo tú y yo, sin distracciones.</p>
         </div>
         <div class="feature-card">
-          <div class="icon">🛡️</div>
-          <h3>Protección Premium</h3>
-          <p>Monitoreo avanzado de fraudes y cero responsabilidad en compras no autorizadas.</p>
+          <div class="icon">🎁</div>
+          <div class="reward-points">40 pts</div>
+          <h3>Sorpresa Misteriosa</h3>
+          <p>Un regalo sorpresa elegido especialmente para ti. ¿Qué será? 🤫</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">💐</div>
+          <div class="reward-points">25 pts</div>
+          <h3>Flores a Domicilio</h3>
+          <p>Un ramo hermoso entregado donde estés, solo porque sí, porque te amo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="promises" class="promises-section">
+      <h2 class="section-title">Mis promesas para ti <span class="highlight">💜</span></h2>
+      <div class="promises-grid">
+        <div class="promise-card">
+          <div class="promise-number">01</div>
+          <h3>Siempre hacerte reír</h3>
+          <p>Incluso en los días difíciles, siempre encontraré la forma de sacarte una sonrisa.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-number">02</div>
+          <h3>Escucharte siempre</h3>
+          <p>Tus palabras, tus sueños y hasta tus silencios. Siempre estaré aquí para ti.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-number">03</div>
+          <h3>Nunca dejar de sorprenderte</h3>
+          <p>Cada día es una oportunidad para demostrarte cuánto te quiero.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-number">04</div>
+          <h3>Amarte más cada día</h3>
+          <p>Cuando pienses que ya es imposible quererte más, te demostraré que sí se puede.</p>
         </div>
       </div>
     </section>
 
     <footer>
-      <p>&copy; 2026 Carlos Financial. Todos los derechos reservados.</p>
-      <p class="footer-love">Hecho con 💜 para Nayeli Bebe</p>
+      <div class="footer-heart">💜</div>
+      <p class="footer-main">Hecho con todo mi amor para <strong>Nayeli Bebe</strong></p>
+      <p class="footer-sub">De: Carlos — Para siempre tuyo 💖</p>
     </footer>
 
     <script type="module" src="./main.js"></script>

@@ -6,11 +6,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const applyBtn = document.getElementById('applyBtn');
   const closeGreeting = document.getElementById('closeGreeting');
   const greetingBanner = document.getElementById('greetingBanner');
+  const redeemBtn = document.getElementById('redeemBtn');
 
   // Close greeting banner
   closeGreeting.addEventListener('click', () => {
     greetingBanner.classList.add('hidden');
   });
+
+  // Floating Hearts Background
+  const heartsContainer = document.getElementById('floatingHearts');
+  const heartEmojis = ['💖', '💕', '💗', '💜', '✨', '💘', '🩷'];
+  
+  function createHeart() {
+    const heart = document.createElement('span');
+    heart.className = 'floating-heart';
+    heart.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+    heart.style.left = Math.random() * 100 + '%';
+    heart.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
+    heart.style.animationDuration = (6 + Math.random() * 6) + 's';
+    heart.style.animationDelay = Math.random() * 2 + 's';
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 14000);
+  }
+
+  // Create initial hearts
+  for (let i = 0; i < 8; i++) {
+    setTimeout(createHeart, i * 600);
+  }
+  // Keep creating hearts
+  setInterval(createHeart, 2500);
 
   // 3D Card Hover Effect
   cardContainer.addEventListener('mousemove', (e) => {
@@ -42,12 +67,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Apply button animation
+  // Apply button — romantic message
   applyBtn.addEventListener('click', () => {
     applyBtn.style.transform = 'scale(0.95)';
     setTimeout(() => {
       applyBtn.style.transform = 'scale(1)';
-      alert('¡Proceso de solicitud iniciando! 🎉');
+      alert('💖 ¡Nayeli Bebe, tienes recompensas ilimitadas esperándote! Te amo mucho 💖');
     }, 150);
+  });
+
+  // Redeem button
+  if (redeemBtn) {
+    redeemBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('💝 ¡Muéstrale esta tarjeta a Carlos para canjear tu recompensa! 🎁');
+    });
+  }
+
+  // Intersection Observer for scroll animations
+  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.feature-card, .promise-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
   });
 });
