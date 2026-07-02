@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const cardContainer = document.getElementById('creditCard');
   const card = cardContainer.querySelector('.card');
   const applyBtn = document.getElementById('applyBtn');
+  const closeGreeting = document.getElementById('closeGreeting');
+  const greetingBanner = document.getElementById('greetingBanner');
+
+  // Close greeting banner
+  closeGreeting.addEventListener('click', () => {
+    greetingBanner.classList.add('hidden');
+  });
 
   // 3D Card Hover Effect
   cardContainer.addEventListener('mousemove', (e) => {
@@ -40,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applyBtn.style.transform = 'scale(0.95)';
     setTimeout(() => {
       applyBtn.style.transform = 'scale(1)';
-      alert('Application process starting...');
+      alert('¡Proceso de solicitud iniciando! 🎉');
     }, 150);
   });
 });
