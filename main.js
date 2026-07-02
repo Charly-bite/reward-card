@@ -13,6 +13,30 @@ document.addEventListener('DOMContentLoaded', () => {
     greetingBanner.classList.add('hidden');
   });
 
+  // Hamburger Menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const navOverlay = document.getElementById('navOverlay');
+
+  function toggleMenu() {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('open');
+    navOverlay.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+  navOverlay.addEventListener('click', toggleMenu);
+
+  // Close menu when clicking nav links
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navLinks.classList.contains('open')) {
+        toggleMenu();
+      }
+    });
+  });
+
   // Floating Hearts Background
   const heartsContainer = document.getElementById('floatingHearts');
   const heartEmojis = ['💖', '💕', '💗', '💜', '✨', '💘', '🩷'];
