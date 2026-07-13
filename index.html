@@ -23,50 +23,43 @@
     <div class="greeting-banner" id="greetingBanner">
       <div class="greeting-content">
         <span class="greeting-sparkle">💖</span>
-        <p class="greeting-text">¡Hola <strong>Nayeli Bebe</strong>! Esta tarjeta es especialmente para ti ✨</p>
+        <p class="greeting-text">¡Hola <strong>Nayeli Bebe</strong>! Esta tarjeta es para ti ✨</p>
         <span class="greeting-sparkle">💖</span>
       </div>
       <button class="greeting-close" id="closeGreeting" aria-label="Cerrar">&times;</button>
     </div>
 
-    <nav class="navbar">
-      <div class="logo">Carlos <span class="heart-logo">♥</span> Nayeli</div>
-      <button class="hamburger" id="hamburger" aria-label="Menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="nav-overlay" id="navOverlay"></div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#rewards">Recompensas</a></li>
-        <li><a href="#promises">Promesas</a></li>
-        <li><a href="#" class="btn-primary-sm" id="redeemBtn">Canjear 💝</a></li>
-      </ul>
-    </nav>
+    <!-- Top Header (replaces old navbar) -->
+    <header class="top-header">
+      <div class="logo">Carlos <span class="heart-logo" id="secretHeart" style="cursor:pointer;" title="Toca 5 veces...">♥</span> Nayeli</div>
+      <div class="points-display">
+        <span class="points-icon">💋</span>
+        <span class="points-count" id="userPoints">0</span> pts
+      </div>
+    </header>
 
-    <main class="hero">
+    <main class="hero" id="hero">
       <div class="hero-content">
         <p class="hero-tag">Tu tarjeta de amor exclusiva</p>
         <h1 class="hero-title">Cada momento juntos merece una <span>recompensa.</span></h1>
-        <p class="hero-subtitle">Esta tarjeta es tu pase VIP a citas sorpresa, abrazos infinitos, y todos los momentos especiales que compartimos. Acumula puntos con cada beso. 💋</p>
+        <p class="hero-subtitle">Esta tarjeta es tu pase VIP a citas sorpresa y abrazos infinitos. Acumula puntos con cada beso. 💋</p>
         <div class="hero-actions">
           <button class="btn-primary" id="applyBtn">Ver Recompensas 🎁</button>
-          <button class="btn-secondary">Nuestra Historia 💫</button>
         </div>
         <div class="love-stats">
           <div class="stat">
             <span class="stat-number">∞</span>
-            <span class="stat-label">Besos disponibles</span>
+            <span class="stat-label">Besos disp.</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
             <span class="stat-number">24/7</span>
-            <span class="stat-label">Abrazos gratis</span>
+            <span class="stat-label">Abrazos</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
             <span class="stat-number">100%</span>
-            <span class="stat-label">Amor garantizado</span>
+            <span class="stat-label">Amor</span>
           </div>
         </div>
       </div>
@@ -93,54 +86,60 @@
     </main>
 
     <section id="rewards" class="features">
-      <h2 class="section-title">Recompensas que puedes <span class="highlight">canjear</span></h2>
-      <p class="section-subtitle">Acumula puntos de amor y canjéalos por experiencias inolvidables 💕</p>
+      <h2 class="section-title">Recompensas para <span class="highlight">canjear</span></h2>
+      <p class="section-subtitle">Tus besos valen mucho, úsalos sabiamente 💕</p>
       <div class="feature-grid">
-        <div class="feature-card">
+        <div class="feature-card reward-item" data-cost="50" data-name="Cena Romántica">
           <div class="icon">🌹</div>
           <div class="reward-points">50 pts</div>
           <h3>Cena Romántica</h3>
           <p>Una cena especial en tu restaurante favorito, con velas y todo lo que te mereces.</p>
+          <button class="btn-redeem">Canjear 💝</button>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reward-item" data-cost="30" data-name="Noche de Pelis">
           <div class="icon">🎬</div>
           <div class="reward-points">30 pts</div>
           <h3>Noche de Pelis</h3>
           <p>Maratón de películas con palomitas, cobijas y abrazos ilimitados toda la noche.</p>
+          <button class="btn-redeem">Canjear 💝</button>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reward-item" data-cost="75" data-name="Día de Spa">
           <div class="icon">💆‍♀️</div>
           <div class="reward-points">75 pts</div>
           <h3>Día de Spa</h3>
           <p>Un día completo de relajación y consentimiento. Te lo mereces, bebe.</p>
+          <button class="btn-redeem">Canjear 💝</button>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reward-item" data-cost="100" data-name="Escapada Romántica">
           <div class="icon">✈️</div>
           <div class="reward-points">100 pts</div>
           <h3>Escapada Romántica</h3>
           <p>Un fin de semana juntos en un lugar especial. Solo tú y yo, sin distracciones.</p>
+          <button class="btn-redeem">Canjear 💝</button>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reward-item" data-cost="40" data-name="Sorpresa Misteriosa">
           <div class="icon">🎁</div>
           <div class="reward-points">40 pts</div>
           <h3>Sorpresa Misteriosa</h3>
           <p>Un regalo sorpresa elegido especialmente para ti. ¿Qué será? 🤫</p>
+          <button class="btn-redeem">Canjear 💝</button>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reward-item" data-cost="25" data-name="Flores a Domicilio">
           <div class="icon">💐</div>
           <div class="reward-points">25 pts</div>
           <h3>Flores a Domicilio</h3>
           <p>Un ramo hermoso entregado donde estés, solo porque sí, porque te amo.</p>
+          <button class="btn-redeem">Canjear 💝</button>
         </div>
       </div>
     </section>
 
     <section id="promises" class="promises-section">
-      <h2 class="section-title">Mis promesas para ti <span class="highlight">💜</span></h2>
+      <h2 class="section-title">Mis promesas <span class="highlight">💜</span></h2>
       <div class="promises-grid">
         <div class="promise-card">
           <div class="promise-number">01</div>
-          <h3>Siempre hacerte reír</h3>
+          <h3>Hacerte reír</h3>
           <p>Incluso en los días difíciles, siempre encontraré la forma de sacarte una sonrisa.</p>
         </div>
         <div class="promise-card">
@@ -150,12 +149,12 @@
         </div>
         <div class="promise-card">
           <div class="promise-number">03</div>
-          <h3>Nunca dejar de sorprenderte</h3>
+          <h3>Sorprenderte</h3>
           <p>Cada día es una oportunidad para demostrarte cuánto te quiero.</p>
         </div>
         <div class="promise-card">
           <div class="promise-number">04</div>
-          <h3>Amarte más cada día</h3>
+          <h3>Amarte más</h3>
           <p>Cuando pienses que ya es imposible quererte más, te demostraré que sí se puede.</p>
         </div>
       </div>
@@ -163,9 +162,51 @@
 
     <footer>
       <div class="footer-heart">💜</div>
-      <p class="footer-main">Hecho con todo mi amor para <strong>Nayeli Bebe</strong></p>
-      <p class="footer-sub">De: Carlos — Para siempre tuyo 💖</p>
+      <p class="footer-main">Para <strong>Nayeli Bebe</strong></p>
+      <p class="footer-sub">De: Carlos — Para siempre 💖</p>
+      <!-- Espacio extra al final para que el contenido no quede oculto detrás de la barra de navegación móvil -->
+      <div style="height: 80px;"></div>
     </footer>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <a href="#hero" class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Inicio</span>
+      </a>
+      <a href="#rewards" class="nav-item">
+        <span class="nav-icon">🎁</span>
+        <span class="nav-label">Canjear</span>
+      </a>
+      <a href="#promises" class="nav-item">
+        <span class="nav-icon">✨</span>
+        <span class="nav-label">Promesas</span>
+      </a>
+    </nav>
+
+    <!-- Modal Add Points -->
+    <div class="modal-overlay hidden" id="addPointsModal">
+      <div class="modal-content">
+        <h3>Añadir Puntos 💋</h3>
+        <p>¿Cuántos besitos nuevos has recibido?</p>
+        <input type="number" id="pointsInput" placeholder="Ej: 50" min="1" class="points-input" />
+        <div class="modal-actions">
+          <button class="btn-secondary" id="closeAddPoints">Cancelar</button>
+          <button class="btn-primary" id="confirmAddPoints">Depositar 💖</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Custom Alert -->
+    <div class="modal-overlay hidden" id="alertModal">
+      <div class="modal-content">
+        <h3 id="alertTitle">Mensaje</h3>
+        <p id="alertMessage">...</p>
+        <div class="modal-actions">
+          <button class="btn-primary" id="closeAlert">Aceptar</button>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="./main.js"></script>
   </body>
